@@ -1,0 +1,5 @@
+default_version = '2.0'
+comment = 'pg_hashids - TLE compatible hashids implementation'
+relocatable = true
+requires = 'plpgsql'
+trusted = true

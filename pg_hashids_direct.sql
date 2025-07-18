@@ -1,4 +1,3 @@
-\echo Use "CREATE EXTENSION pg_hashids" to load this file. \quit
 
 -- pg_hashids 2.0 - TLE Compatible PL/pgSQL Implementation
 -- This version replaces the C implementation with PL/pgSQL for AWS RDS TLE compatibility
@@ -161,9 +160,8 @@ BEGIN
     
     RETURN result;
 END;
-$$;
-
--- Configuration initialization function
+$$;-- Confi
+guration initialization function
 CREATE OR REPLACE FUNCTION _hashids_init(
     p_salt text DEFAULT '',
     p_min_length integer DEFAULT 0,
@@ -328,9 +326,8 @@ BEGIN
     
     RETURN result;
 END;
-$$;
-
--- Decoding helper functions
+$$;--
+ Decoding helper functions
 CREATE OR REPLACE FUNCTION _hashids_validate_hash(p_hash text, p_config hashids_config) RETURNS boolean
 LANGUAGE plpgsql IMMUTABLE STRICT
 AS $$
@@ -519,9 +516,8 @@ BEGIN
     
     RETURN result;
 END;
-$$;
-
--- Public API Functions
+$$;-- P
+ublic API Functions
 
 -- id_encode function overloads
 CREATE OR REPLACE FUNCTION id_encode(p_number bigint) RETURNS text
